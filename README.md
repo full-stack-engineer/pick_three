@@ -1,4 +1,4 @@
-# pickthree
+# pick_three
 
 A new Flutter application.
 
