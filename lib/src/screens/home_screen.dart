@@ -1,91 +1,28 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-
-import '../constants.dart';
+import 'package:pickthree/src/screens/pick_add_screen.dart';
 
 class HomeScreen extends StatelessWidget {
-  static const String id = 'home_screen';
+  static const id = 'home_screen';
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+        child: Center(
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: <Widget>[
-              Row(
-                children: <Widget>[
-                  Expanded(
-                    flex: 3,
-                    child: TextField(
-                      decoration: kTextFieldDecoration.copyWith(
-                        hintText: 'Enter',
-                      ),
-                    ),
-                  ),
-                  SizedBox(
-                    width: 10,
-                  ),
-                  Expanded(
-                    flex: 1,
-                    child: RaisedButton(
-                      onPressed: (){},
-                      child: Text('random'),
-                    ),
-                  ),
-                ],
+              RaisedButton(
+                onPressed: (){
+                  Navigator.pushNamed(context, PickAddScreen.id);
+                },
+                child: Text('自分で選ぶ'),
               ),
-              SizedBox(
-                height: 20,
-              ),
-              Row(
-                children: <Widget>[
-                  Expanded(
-                    flex: 3,
-                    child: TextField(
-                      decoration: kTextFieldDecoration.copyWith(
-                        hintText: 'Enter',
-                      ),
-                    ),
-                  ),
-                  SizedBox(
-                    width: 10,
-                  ),
-                  Expanded(
-                    flex: 1,
-                    child: RaisedButton(
-                      onPressed: (){},
-                      child: Text('random'),
-                    ),
-                  ),
-                ],
-              ),
-              SizedBox(
-                height: 20,
-              ),
-              Row(
-                children: <Widget>[
-                  Expanded(
-                    flex: 3,
-                    child: TextField(
-                      decoration: kTextFieldDecoration.copyWith(
-                        hintText: 'Enter',
-                      ),
-                    ),
-                  ),
-                  SizedBox(
-                    width: 10,
-                  ),
-                  Expanded(
-                    flex: 1,
-                    child: RaisedButton(
-                      onPressed: (){},
-                      child: Text('random'),
-                    ),
-                  ),
-                ],
+              RaisedButton(
+                onPressed: (){
+                  Navigator.pushNamed(context, PickAddScreen.id);
+                },
+                child: Text('ランダムで選ぶ'),
               ),
             ],
           ),
