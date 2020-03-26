@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-
 import '../constants.dart';
 
 class PickAddScreen extends StatelessWidget {
@@ -14,7 +13,9 @@ class PickAddScreen extends StatelessWidget {
           padding: const EdgeInsets.all(8.0),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
+              Text('Type1'),
               Row(
                 children: <Widget>[
                   Expanded(
@@ -46,6 +47,7 @@ class PickAddScreen extends StatelessWidget {
               SizedBox(
                 height: 20,
               ),
+              Text('Type2'),
               Row(
                 children: <Widget>[
                   Expanded(
@@ -77,6 +79,7 @@ class PickAddScreen extends StatelessWidget {
               SizedBox(
                 height: 20,
               ),
+              Text('Type3'),
               Row(
                 children: <Widget>[
                   Expanded(
@@ -108,10 +111,12 @@ class PickAddScreen extends StatelessWidget {
               SizedBox(
                 height: 20,
               ),
-              RaisedButton(
-                onPressed: () {},
-                child: Text(
-                  'Submit',
+              Center(
+                child: RaisedButton(
+                  onPressed: () {},
+                  child: Text(
+                    'Submit',
+                  ),
                 ),
               ),
             ],
