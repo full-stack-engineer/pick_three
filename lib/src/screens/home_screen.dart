@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import '../models/type_data.dart';
 import 'package:pickthree/src/screens/pick_add_screen.dart';
+import 'package:provider/provider.dart';
 
 class HomeScreen extends StatelessWidget {
   static const id = 'home_screen';
@@ -20,6 +22,7 @@ class HomeScreen extends StatelessWidget {
               ),
               RaisedButton(
                 onPressed: (){
+                  Provider.of<TypeData>(context, listen: false).randSetType();
                   Navigator.pushNamed(context, PickAddScreen.id);
                 },
                 child: Text('ランダムで選ぶ'),
