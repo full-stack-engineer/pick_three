@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "329173526466",
+    "firebase_url": "https://pick-three.firebaseio.com",
+    "project_id": "pick-three",
+    "storage_bucket": "pick-three.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:329173526466:android:158fac8da94c26e35cd85b",
+        "android_client_info": {
+          "package_name": "com.example.pickthree"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "329173526466-l3mhpkb402008jrrk1uplkh7klp1fnlb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBvwf3ctNJVlkKXxcBLfzPwTjP_9K5_kcc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "329173526466-l3mhpkb402008jrrk1uplkh7klp1fnlb.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "329173526466-v525f6seltnlpictpgfm1nr7q9u0nr2n.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.pickthree"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

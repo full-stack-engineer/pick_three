@@ -26,6 +26,9 @@ dependencies:
   sqflite: ^1.3.0
   path_provider: ^1.6.5
   provider: ^4.0.4
+  firebase_core: 0.4.4
+  cloud_firestore: ^0.13.4+1
+  modal_progress_hud: ^0.1.3
 
 dev_dependencies:
   flutter_test:
