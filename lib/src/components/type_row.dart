@@ -8,7 +8,7 @@ class TypeRow extends StatelessWidget {
 
   TypeRow(this.typeText);
 
-  final messageTextController = TextEditingController();
+  final typeTextController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -21,6 +21,7 @@ class TypeRow extends StatelessWidget {
             Expanded(
               flex: 3,
               child: TextField(
+                controller: typeTextController,
                 decoration: kTextFieldDecoration.copyWith(
                   hintText: 'Enter',
                 ),
