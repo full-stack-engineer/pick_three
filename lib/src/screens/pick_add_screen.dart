@@ -21,18 +21,15 @@ class PickAddScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                Text(type.types[0]),
-                TypeRow(),
+                TypeRow(type.types[0]),
                 SizedBox(
                   height: 20,
                 ),
-                Text(type.types[1]),
-                TypeRow(),
+                TypeRow(type.types[1]),
                 SizedBox(
                   height: 20,
                 ),
-                Text(type.types[2]),
-                TypeRow(),
+                TypeRow(type.types[2]),
                 SizedBox(
                   height: 20,
                 ),

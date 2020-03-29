@@ -4,36 +4,49 @@ import '../models/type_data.dart';
 import '../constants.dart';
 
 class TypeRow extends StatelessWidget {
+  final String typeText;
+
+  TypeRow(this.typeText);
+
+  final messageTextController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: <Widget>[
-        Expanded(
-          flex: 3,
-          child: TextField(
-            decoration: kTextFieldDecoration.copyWith(
-              hintText: 'Enter',
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(typeText),
+        Row(
+          children: <Widget>[
+            Expanded(
+              flex: 3,
+              child: TextField(
+                decoration: kTextFieldDecoration.copyWith(
+                  hintText: 'Enter',
+                ),
+                onChanged: (newValue) {
+                  Provider.of<TypeData>(context, listen: false)
+                      .addTypeText(newValue);
+                },
+              ),
             ),
-            onChanged: (newValue) {
-              Provider.of<TypeData>(context, listen: false).addTypeText(newValue);
-            },
-          ),
-        ),
-        SizedBox(width: 5),
-        Expanded(
-          flex: 1,
-          child: RaisedButton(
-            onPressed: () {},
-            child: Icon(Icons.history),
-          ),
-        ),
-        SizedBox(width: 5),
-        Expanded(
-          flex: 1,
-          child: RaisedButton(
-            onPressed: () {},
-            child: Icon(Icons.shuffle),
-          ),
+            SizedBox(width: 5),
+            Expanded(
+              flex: 1,
+              child: RaisedButton(
+                onPressed: () {},
+                child: Icon(Icons.history),
+              ),
+            ),
+            SizedBox(width: 5),
+            Expanded(
+              flex: 1,
+              child: RaisedButton(
+                onPressed: () {},
+                child: Icon(Icons.shuffle),
+              ),
+            ),
+          ],
         ),
       ],
     );
