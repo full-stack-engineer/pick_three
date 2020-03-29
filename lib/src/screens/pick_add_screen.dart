@@ -4,7 +4,6 @@ import 'package:pickthree/src/helpers/database_helper.dart';
 import 'package:pickthree/src/models/type_data.dart';
 import 'package:provider/provider.dart';
 import '../components/type_row.dart';
-import '../constants.dart';
 
 class PickAddScreen extends StatelessWidget {
   static const String id = 'pick_add_screen';
