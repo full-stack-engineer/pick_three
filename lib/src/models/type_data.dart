@@ -2,7 +2,13 @@ import 'package:flutter/foundation.dart';
 import 'dart:math';
 
 class TypeData with ChangeNotifier {
+  List<String> typeTexts = [];
   List<String> types = [];
+
+  void addTypeText(String typeText) {
+    typeTexts.add(typeText);
+    notifyListeners();
+  }
 
   void setType(List<String> newTypes) {
     types = newTypes;
