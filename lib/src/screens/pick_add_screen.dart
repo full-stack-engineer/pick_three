@@ -3,6 +3,7 @@ import 'package:flutter/rendering.dart';
 import 'package:pickthree/src/helpers/database_helper.dart';
 import 'package:pickthree/src/models/type_data.dart';
 import 'package:provider/provider.dart';
+import 'package:sqflite/sqflite.dart';
 import '../components/type_row.dart';
 
 class PickAddScreen extends StatelessWidget {
