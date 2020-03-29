@@ -10,10 +10,11 @@ class TypeData with ChangeNotifier {
   }
 
   void randSetType() {
+    types.clear();
     List<String> allTypes = ['work', 'friend', 'family', 'sport', 'sleep'];
 
     for (int i=0; i<3; i++) {
-      int randomNum = Random().nextInt(allTypes.length-1);
+      int randomNum = Random().nextInt(allTypes.length);
       types.add(allTypes[randomNum]);
       allTypes.removeAt(randomNum);
     }
