@@ -13,6 +13,9 @@ class PickAddScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text('タスク入力'),
+      ),
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(8.0),
