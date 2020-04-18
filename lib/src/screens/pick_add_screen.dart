@@ -19,36 +19,38 @@ class PickAddScreen extends StatelessWidget {
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(8.0),
-          child: Consumer<TypeData>(builder: (context, type, child) {
-            return Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                TypeRow(type.types[0]),
-                SizedBox(
-                  height: 20,
-                ),
-                TypeRow(type.types[1]),
-                SizedBox(
-                  height: 20,
-                ),
-                TypeRow(type.types[2]),
-                SizedBox(
-                  height: 20,
-                ),
-                Center(
-                  child: RaisedButton(
-                    onPressed: () {
-                      insert(type.types, type.typeTexts);
-                    },
-                    child: Text(
-                      'Submit',
+          child: Consumer<TypeData>(
+            builder: (context, type, child) {
+              return Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  TypeRow(type.types[0]),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  TypeRow(type.types[1]),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  TypeRow(type.types[2]),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Center(
+                    child: RaisedButton(
+                      onPressed: () {
+                        insert(type.types, type.typeTexts);
+                      },
+                      child: Text(
+                        'Submit',
+                      ),
                     ),
                   ),
-                ),
-              ],
-            );
-          }),
+                ],
+              );
+            },
+          ),
         ),
       ),
     );

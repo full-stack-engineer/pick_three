@@ -1,3 +1,6 @@
+import 'dart:math';
+
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../models/type_data.dart';
@@ -5,6 +8,7 @@ import '../constants.dart';
 
 class TypeRow extends StatelessWidget {
   final String typeText;
+  final _firestore = Firestore.instance;
 
   TypeRow(this.typeText);
 
@@ -43,7 +47,15 @@ class TypeRow extends StatelessWidget {
             Expanded(
               flex: 1,
               child: RaisedButton(
-                onPressed: () {},
+                onPressed: () {
+                  _firestore
+                      .collection(typeText)
+                  .getDocuments()
+                  .then((QuerySnapshot snapshot) {
+                    int randomNum = Random().nextInt(snapshot.documents.length);
+                    typeTextController.text = snapshot.documents[randomNum].data['text'];
+                  });
+                },
                 child: Icon(Icons.shuffle),
               ),
             ),
