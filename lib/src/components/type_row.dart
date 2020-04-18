@@ -50,10 +50,11 @@ class TypeRow extends StatelessWidget {
                 onPressed: () {
                   _firestore
                       .collection(typeText)
-                  .getDocuments()
-                  .then((QuerySnapshot snapshot) {
+                      .getDocuments()
+                      .then((QuerySnapshot snapshot) {
                     int randomNum = Random().nextInt(snapshot.documents.length);
-                    typeTextController.text = snapshot.documents[randomNum].data['text'];
+                    typeTextController.text =
+                        snapshot.documents[randomNum].data['text'];
                   });
                 },
                 child: Icon(Icons.shuffle),
