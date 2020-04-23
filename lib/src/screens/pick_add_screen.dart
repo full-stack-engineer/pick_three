@@ -4,11 +4,13 @@ import 'package:pickthree/src/helpers/database_helper.dart';
 import 'package:pickthree/src/models/type_data.dart';
 import 'package:provider/provider.dart';
 import 'package:sqflite/sqflite.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import '../components/type_row.dart';
 
 class PickAddScreen extends StatelessWidget {
   static const String id = 'pick_add_screen';
   final dbHelper = DatabaseHelper.instance;
+  final _firestore = Firestore.instance;
 
   @override
   Widget build(BuildContext context) {
@@ -41,6 +43,7 @@ class PickAddScreen extends StatelessWidget {
                     child: RaisedButton(
                       onPressed: () {
                         insert(type.types, type.typeTexts);
+                        insertFirebase(type.types, type.typeTexts);
                       },
                       child: Text(
                         'Submit',
@@ -66,4 +69,13 @@ class PickAddScreen extends StatelessWidget {
       print('inserted row id: $id');
     }
   }
+
+  void insertFirebase(List<String> types, List<String> typeTexts) async {
+    for (int i = 0; i < 3; i++) {
+      _firestore.collection(types[i]).add({
+        'text': typeTexts[i]
+      });
+    }
+  }
+
 }
