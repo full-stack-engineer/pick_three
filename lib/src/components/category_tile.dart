@@ -7,9 +7,9 @@ import 'package:provider/provider.dart';
 
 class CategoryTile extends StatelessWidget {
   final String categoryText;
-  final String destinationId;
+  final bool hasPressed;
 
-  CategoryTile(this.categoryText, this.destinationId);
+  CategoryTile(this.categoryText, this.hasPressed);
 
   @override
   Widget build(BuildContext context) {
@@ -18,13 +18,14 @@ class CategoryTile extends StatelessWidget {
       children: <Widget>[
         RaisedButton(
           color: tileColor(categoryText),
-          onPressed: () {
+          onPressed: hasPressed ? () {
             Provider.of<CategoryData>(context, listen: false).pickCategory(categoryText);
-            if (Provider.of<CategoryData>(context, listen: false).pickThreeCount() == 3 || destinationId == AddPickThreeScreen.id) {
+            if (Provider.of<CategoryData>(context, listen: false).pickThreeCount() == 3) {
               Provider.of<CategoryData>(context, listen: false).resetCategories();
-              Navigator.pushNamed(context, destinationId);
+              Navigator.pushNamed(context, DecisionPickScreen.id);
             }
-          },
+          } : null,
+          disabledColor: tileColor(categoryText),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(8.0),
           ),

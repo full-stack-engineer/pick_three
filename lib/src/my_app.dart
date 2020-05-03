@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:page_transition/page_transition.dart';
 import 'package:pickthree/src/screens/add_pick_three_screen.dart';
 import 'package:pickthree/src/screens/decision_pick_screen.dart';
 import 'package:pickthree/src/screens/home_screen.dart';
@@ -12,11 +13,29 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: HomeScreen(),
-      initialRoute: HomeScreen.id,
-      routes: {
-        HomeScreen.id: (context) => HomeScreen(),
-        DecisionPickScreen.id: (context) => DecisionPickScreen(),
-        AddPickThreeScreen.id: (context) => AddPickThreeScreen(),
+      onGenerateRoute: (settings) {
+        switch(settings.name) {
+          case HomeScreen.id:
+            return PageTransition(
+              child: HomeScreen(),
+              type: PageTransitionType.fade,
+              settings: settings,
+            );
+          case DecisionPickScreen.id:
+            return PageTransition(
+              child: DecisionPickScreen(),
+              type: PageTransitionType.fade,
+              settings: settings,
+            );
+          case AddPickThreeScreen.id:
+            return PageTransition(
+              child: AddPickThreeScreen(),
+              type: PageTransitionType.fade,
+              settings: settings,
+            );
+          default:
+            return null;
+        }
       },
     );
   }

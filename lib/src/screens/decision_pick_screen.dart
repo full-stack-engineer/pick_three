@@ -35,9 +35,12 @@ class DecisionPickScreen extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: <Widget>[
                         Hero(
-                          child: CategoryTile(
-                            categoryData.pickedCategories[0],
-                            AddPickThreeScreen.id,
+                          child: Material(
+                            color: Colors.transparent,
+                            child: CategoryTile(
+                              categoryData.pickedCategories[0],
+                              false,
+                            ),
                           ),
                           tag: 'first',
                         ),
@@ -45,7 +48,7 @@ class DecisionPickScreen extends StatelessWidget {
                         Hero(
                           child: CategoryTile(
                             categoryData.pickedCategories[1],
-                            AddPickThreeScreen.id,
+                            false,
                           ),
                           tag: 'second',
                         ),
@@ -53,7 +56,7 @@ class DecisionPickScreen extends StatelessWidget {
                         Hero(
                           child: CategoryTile(
                             categoryData.pickedCategories[2],
-                            AddPickThreeScreen.id,
+                            false,
                           ),
                           tag: 'third',
                         ),
@@ -61,6 +64,18 @@ class DecisionPickScreen extends StatelessWidget {
                       ],
                     );
                   },
+                ),
+              ),
+              Expanded(
+                flex: 1,
+                child: Align(
+                  alignment: Alignment.center,
+                  child: FloatingActionButton(
+                    backgroundColor: Colors.white,
+                    onPressed: () {
+                      Navigator.pushNamed(context, AddPickThreeScreen.id);
+                    },
+                  ),
                 ),
               ),
             ],
