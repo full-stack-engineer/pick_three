@@ -1,9 +1,12 @@
 import 'dart:io';
 import 'package:firebase_admob/firebase_admob.dart';
 import 'package:flutter/material.dart';
-import '../models/type_data.dart';
-import 'package:pickthree/src/screens/pick_add_screen.dart';
+import 'package:pickthree/src/components/category_tile.dart';
+import 'package:pickthree/src/extensions/hex_color.dart';
+import '../models/category_data.dart';
 import 'package:provider/provider.dart';
+
+import 'decision_pick_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   static const id = 'home_screen';
@@ -13,43 +16,71 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
-    FirebaseAdMob.instance.initialize(appId: getAppId());
-    myBanner
-      ..load()
-      ..show(
-        // ボトムからのオフセットで表示位置を決定
-        anchorOffset: 0.0,
-        anchorType: AnchorType.bottom,
-      );
+//    FirebaseAdMob.instance.initialize(appId: getAppId());
+//    myBanner
+//      ..load()
+//      ..show(
+//        // ボトムからのオフセットで表示位置を決定
+//        anchorOffset: 0.0,
+//        anchorType: AnchorType.bottom,
+//      );
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('ホーム'),
-      ),
+//      appBar: AppBar(
+//        title: Text('ホーム'),
+//      ),
       body: SafeArea(
-        child: Center(
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        child: Container(
+          padding: EdgeInsets.all(24.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
-              RaisedButton(
-                onPressed: (){
-                  Navigator.pushNamed(context, PickAddScreen.id);
-                },
-                child: Text('自分で選ぶ'),
+              Expanded(
+                child: Text(
+                  '3つのカテゴリーを\nピックアップしましょう',
+                  style: TextStyle(
+                    fontSize: 24.0,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
               ),
-              RaisedButton(
-                onPressed: (){
-                  Provider.of<TypeData>(context, listen: false).randSetType();
-                  Navigator.pushNamed(context, PickAddScreen.id);
+              SizedBox(height: 24.0),
+              Expanded(
+                child: CategoryTile('仕事'),
+              ),
+              SizedBox(height: 20),
+              Expanded(
+                child: CategoryTile('運動'),
+              ),
+              SizedBox(height: 20),
+              Expanded(
+                child: CategoryTile('家庭'),
+              ),
+              SizedBox(height: 20),
+              Expanded(
+                child: CategoryTile('友人'),
+              ),
+              SizedBox(height: 20),
+              Expanded(
+                child: CategoryTile('睡眠'),
+              ),
+              SizedBox(height: 30),
+              FloatingActionButton(
+                onPressed: () {
+                  Provider.of<CategoryData>(context, listen: false).randPickCategories();
+                  if (Provider.of<CategoryData>(context, listen: false).pickThreeCount() == 3) {
+                    Provider.of<CategoryData>(context, listen: false).resetCategories();
+                    Navigator.pushNamed(context, DecisionPickScreen.id);
+                  }
                 },
-                child: Text('ランダムで選ぶ'),
+                backgroundColor: HexColor.fromHex('#FFFFFF'),
               ),
             ],
           ),
@@ -75,7 +106,8 @@ MobileAdTargetingInfo targetingInfo = MobileAdTargetingInfo(
   birthday: DateTime.now(),
   childDirected: false,
   designedForFamilies: false,
-  gender: MobileAdGender.male, // or female, unknown
+  gender: MobileAdGender.male,
+  // or female, unknown
   testDevices: <String>[], // Android emulators are considered test devices
 );
 

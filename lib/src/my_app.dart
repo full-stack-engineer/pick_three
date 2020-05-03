@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:pickthree/src/screens/decision_pick_screen.dart';
 import 'package:pickthree/src/screens/home_screen.dart';
-import 'package:pickthree/src/screens/pick_add_screen.dart';
 
 class MyApp extends StatelessWidget {
   @override
@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
       initialRoute: HomeScreen.id,
       routes: {
         HomeScreen.id: (context) => HomeScreen(),
-        PickAddScreen.id: (context) => PickAddScreen(),
+        DecisionPickScreen.id: (context) => DecisionPickScreen(),
       },
     );
   }
