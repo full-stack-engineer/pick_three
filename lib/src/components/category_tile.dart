@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:pickthree/src/models/category_data.dart';
+import 'package:pickthree/src/screens/add_pick_three_screen.dart';
 import 'package:pickthree/src/screens/decision_pick_screen.dart';
 import '../extensions/hex_color.dart';
 import 'package:provider/provider.dart';
 
 class CategoryTile extends StatelessWidget {
   final String categoryText;
+  final String destinationId;
 
-  CategoryTile(this.categoryText);
+  CategoryTile(this.categoryText, this.destinationId);
 
   @override
   Widget build(BuildContext context) {
@@ -18,9 +20,9 @@ class CategoryTile extends StatelessWidget {
           color: tileColor(categoryText),
           onPressed: () {
             Provider.of<CategoryData>(context, listen: false).pickCategory(categoryText);
-            if (Provider.of<CategoryData>(context, listen: false).pickThreeCount() == 3) {
+            if (Provider.of<CategoryData>(context, listen: false).pickThreeCount() == 3 || destinationId == AddPickThreeScreen.id) {
               Provider.of<CategoryData>(context, listen: false).resetCategories();
-              Navigator.pushNamed(context, DecisionPickScreen.id);
+              Navigator.pushNamed(context, destinationId);
             }
           },
           shape: RoundedRectangleBorder(

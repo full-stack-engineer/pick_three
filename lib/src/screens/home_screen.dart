@@ -53,23 +53,23 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               SizedBox(height: 24.0),
               Expanded(
-                child: CategoryTile('仕事'),
+                child: CategoryTile('仕事', DecisionPickScreen.id),
               ),
               SizedBox(height: 20),
               Expanded(
-                child: CategoryTile('運動'),
+                child: CategoryTile('運動', DecisionPickScreen.id),
               ),
               SizedBox(height: 20),
               Expanded(
-                child: CategoryTile('家庭'),
+                child: CategoryTile('家庭', DecisionPickScreen.id),
               ),
               SizedBox(height: 20),
               Expanded(
-                child: CategoryTile('友人'),
+                child: CategoryTile('友人', DecisionPickScreen.id),
               ),
               SizedBox(height: 20),
               Expanded(
-                child: CategoryTile('睡眠'),
+                child: CategoryTile('睡眠', DecisionPickScreen.id),
               ),
               SizedBox(height: 30),
               FloatingActionButton(

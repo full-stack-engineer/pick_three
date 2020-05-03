@@ -13,13 +13,16 @@ class CategoryData with ChangeNotifier {
 
   int pickThreeCount() {
     int count = 0;
-    pickedCategories.clear();
+    if (pickedCategories.length != 3) {
+      pickedCategories.clear();
+    }
     for (String categoryName in categories.keys) {
       if (categories[categoryName] == true) {
         count++;
         pickedCategories.add(categoryName);
       }
     }
+    print(pickedCategories);
     notifyListeners();
     return count;
   }
