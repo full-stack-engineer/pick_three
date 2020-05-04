@@ -35,26 +35,26 @@ class AddPickThreeScreen extends StatelessWidget {
                     children: <Widget>[
                       Hero(
                         child: CategoryMemoTile(
-                          categoryData.pickedCategories[0],
-                          'hoge',
+                          categoryText: categoryData.pickedCategories[0],
+                          index: 0,
                         ),
-                        tag: 'first',
+                        tag: '0',
                       ),
                       SizedBox(height: 20),
                       Hero(
                         child: CategoryMemoTile(
-                          categoryData.pickedCategories[1],
-                          'hoge',
+                          categoryText: categoryData.pickedCategories[1],
+                          index: 1,
                         ),
-                        tag: 'second',
+                        tag: '1',
                       ),
                       SizedBox(height: 20),
                       Hero(
                         child: CategoryMemoTile(
-                          categoryData.pickedCategories[2],
-                          'hoge',
+                          categoryText: categoryData.pickedCategories[2],
+                          index: 2,
                         ),
-                        tag: 'third',
+                        tag: '2',
                       ),
                     ],
                   );

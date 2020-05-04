@@ -5,9 +5,27 @@ import 'dart:math';
 class CategoryData with ChangeNotifier {
   List<String> pickedCategories = [];
   Map<String, bool> categories = {'仕事': false, '運動': false, '家庭': false, '友人': false, '睡眠': false};
+  List<String> categoryDetailTexts = ["", "", ""];
+  int selectedIndex;
+  String heroTag;
 
   void pickCategory(String categoryName) {
     categories[categoryName] = !categories[categoryName];
+    notifyListeners();
+  }
+
+  void setHeroTag(String tag) {
+    heroTag = tag;
+    notifyListeners();
+  }
+
+  void setSelectedIndex(int index) {
+    selectedIndex = index;
+    notifyListeners();
+  }
+
+  void setCategoryDetailText(String text, int index) {
+    categoryDetailTexts[index] = text;
     notifyListeners();
   }
 

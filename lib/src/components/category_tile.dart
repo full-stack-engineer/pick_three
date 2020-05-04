@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pickthree/src/helpers/tile_color.dart';
 import 'package:pickthree/src/models/category_data.dart';
 import 'package:pickthree/src/screens/add_pick_three_screen.dart';
 import 'package:pickthree/src/screens/decision_pick_screen.dart';
@@ -9,7 +10,7 @@ class CategoryTile extends StatelessWidget {
   final String categoryText;
   final bool hasPressed;
 
-  CategoryTile(this.categoryText, this.hasPressed);
+  CategoryTile({this.categoryText, this.hasPressed});
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +18,7 @@ class CategoryTile extends StatelessWidget {
       overflow: Overflow.visible,
       children: <Widget>[
         RaisedButton(
-          color: tileColor(categoryText),
+          color: TileColor.tileColor(categoryText),
           onPressed: hasPressed ? () {
             Provider.of<CategoryData>(context, listen: false).pickCategory(categoryText);
             if (Provider.of<CategoryData>(context, listen: false).pickThreeCount() == 3) {
@@ -25,20 +26,23 @@ class CategoryTile extends StatelessWidget {
               Navigator.pushNamed(context, DecisionPickScreen.id);
             }
           } : null,
-          disabledColor: tileColor(categoryText),
+          disabledColor: TileColor.tileColor(categoryText),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(8.0),
           ),
           child: Container(
             height: 64,
             child: Center(
-              child: Text(
-                categoryText,
-                style: TextStyle(
-                  color: HexColor.fromHex('#FFFFFF'),
-                  fontSize: 20.0,
+              child: Material(
+                color: Colors.transparent,
+                child: Text(
+                  categoryText,
+                  style: TextStyle(
+                    color: HexColor.fromHex('#FFFFFF'),
+                    fontSize: 20.0,
+                  ),
+                  textAlign: TextAlign.center,
                 ),
-                textAlign: TextAlign.center,
               ),
             ),
           ),
@@ -68,20 +72,4 @@ class CategoryTile extends StatelessWidget {
       ],
     );
   }
-
-  Color tileColor(String categoryText) {
-    switch(categoryText) {
-      case '仕事':
-        return HexColor.fromHex('#EC527F');
-      case '運動':
-        return HexColor.fromHex('#7DCBBF');
-      case '家庭':
-        return HexColor.fromHex('#FCAD43');
-      case '友人':
-        return HexColor.fromHex('#F78863');
-      case '睡眠':
-        return HexColor.fromHex('#825CC6');
-    }
-  }
-
 }

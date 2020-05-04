@@ -53,23 +53,23 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               SizedBox(height: 24.0),
               Expanded(
-                child: CategoryTile('仕事', true),
+                child: CategoryTile(categoryText: '仕事', hasPressed: true),
               ),
               SizedBox(height: 20),
               Expanded(
-                child: CategoryTile('運動', true),
+                child: CategoryTile(categoryText: '運動', hasPressed: true),
               ),
               SizedBox(height: 20),
               Expanded(
-                child: CategoryTile('家庭', true),
+                child: CategoryTile(categoryText: '家庭', hasPressed: true),
               ),
               SizedBox(height: 20),
               Expanded(
-                child: CategoryTile('友人', true),
+                child: CategoryTile(categoryText: '友人', hasPressed: true),
               ),
               SizedBox(height: 20),
               Expanded(
-                child: CategoryTile('睡眠', true),
+                child: CategoryTile(categoryText: '睡眠', hasPressed: true),
               ),
               SizedBox(height: 30),
               FloatingActionButton(

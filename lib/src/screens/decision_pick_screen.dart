@@ -35,30 +35,27 @@ class DecisionPickScreen extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: <Widget>[
                         Hero(
-                          child: Material(
-                            color: Colors.transparent,
-                            child: CategoryTile(
-                              categoryData.pickedCategories[0],
-                              false,
-                            ),
+                          child: CategoryTile(
+                            categoryText: categoryData.pickedCategories[0],
+                            hasPressed: false,
                           ),
-                          tag: 'first',
+                          tag: '0',
                         ),
                         SizedBox(height: 20),
                         Hero(
                           child: CategoryTile(
-                            categoryData.pickedCategories[1],
-                            false,
+                            categoryText: categoryData.pickedCategories[1],
+                            hasPressed: false,
                           ),
-                          tag: 'second',
+                          tag: '1',
                         ),
                         SizedBox(height: 20),
                         Hero(
                           child: CategoryTile(
-                            categoryData.pickedCategories[2],
-                            false,
+                            categoryText: categoryData.pickedCategories[2],
+                            hasPressed: false,
                           ),
-                          tag: 'third',
+                          tag: '2',
                         ),
                         SizedBox(height: 80),
                       ],

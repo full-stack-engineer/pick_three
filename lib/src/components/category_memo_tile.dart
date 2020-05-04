@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:pickthree/src/extensions/hex_color.dart';
+import 'package:pickthree/src/screens/add_detail_text_screen.dart';
+import 'package:provider/provider.dart';
+import '../models/category_data.dart';
+import '../helpers/tile_color.dart';
 
 class CategoryMemoTile extends StatelessWidget {
   final String categoryText;
-  final String destinationId;
+  final int index;
 
-  CategoryMemoTile(this.categoryText, this.destinationId);
+  CategoryMemoTile({this.categoryText, this.index});
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +18,7 @@ class CategoryMemoTile extends StatelessWidget {
           height: 152,
           padding: EdgeInsets.all(10.0),
           decoration: BoxDecoration(
-            color: tileColor(categoryText),
+            color: TileColor.tileColor(categoryText),
             borderRadius: BorderRadius.circular(8.0),
           ),
           child: Align(
@@ -23,22 +26,28 @@ class CategoryMemoTile extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                  categoryText,
-                  textAlign: TextAlign.left,
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 20.0,
-                    fontWeight: FontWeight.bold,
+                Material(
+                  color: Colors.transparent,
+                  child: Text(
+                    categoryText,
+                    textAlign: TextAlign.left,
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 20.0,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ),
                 SizedBox(height: 16.0),
-                Text(
-                  'ここにテキスト入る',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 16.0,
-                    fontWeight: FontWeight.bold,
+                Material(
+                  color: Colors.transparent,
+                  child: Text(
+                    Provider.of<CategoryData>(context, listen: true).categoryDetailTexts[index] ,
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 16.0,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ),
               ],
@@ -49,7 +58,11 @@ class CategoryMemoTile extends StatelessWidget {
           right: 10.0,
           bottom: 17.0,
           child: FloatingActionButton(
-            onPressed: () {},
+            onPressed: () {
+              Provider.of<CategoryData>(context, listen: false).setSelectedIndex(index);
+              Provider.of<CategoryData>(context, listen: false).setHeroTag(index.toString());
+              Navigator.pushNamed(context, AddDetailTextScreen.id);
+            },
             backgroundColor: Colors.white,
             heroTag: null,
             child: Icon(
@@ -61,20 +74,5 @@ class CategoryMemoTile extends StatelessWidget {
         ),
       ],
     );
-  }
-
-  Color tileColor(String categoryText) {
-    switch (categoryText) {
-      case '仕事':
-        return HexColor.fromHex('#EC527F');
-      case '運動':
-        return HexColor.fromHex('#7DCBBF');
-      case '家庭':
-        return HexColor.fromHex('#FCAD43');
-      case '友人':
-        return HexColor.fromHex('#F78863');
-      case '睡眠':
-        return HexColor.fromHex('#825CC6');
-    }
   }
 }

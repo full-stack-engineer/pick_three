@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
+import 'package:pickthree/src/screens/add_detail_text_screen.dart';
 import 'package:pickthree/src/screens/add_pick_three_screen.dart';
 import 'package:pickthree/src/screens/decision_pick_screen.dart';
+import 'package:pickthree/src/screens/add_detail_text_screen.dart';
 import 'package:pickthree/src/screens/home_screen.dart';
 
 class MyApp extends StatelessWidget {
@@ -30,6 +32,12 @@ class MyApp extends StatelessWidget {
           case AddPickThreeScreen.id:
             return PageTransition(
               child: AddPickThreeScreen(),
+              type: PageTransitionType.fade,
+              settings: settings,
+            );
+          case AddDetailTextScreen.id:
+            return PageTransition(
+              child: AddDetailTextScreen(),
               type: PageTransitionType.fade,
               settings: settings,
             );
