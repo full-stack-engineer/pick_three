@@ -3,7 +3,6 @@ import 'package:page_transition/page_transition.dart';
 import 'package:pickthree/src/screens/add_detail_text_screen.dart';
 import 'package:pickthree/src/screens/add_pick_three_screen.dart';
 import 'package:pickthree/src/screens/decision_pick_screen.dart';
-import 'package:pickthree/src/screens/add_detail_text_screen.dart';
 import 'package:pickthree/src/screens/home_screen.dart';
 
 class MyApp extends StatelessWidget {
