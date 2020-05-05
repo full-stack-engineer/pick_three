@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'dart:math';
-
+//TODO: divide private
 class CategoryData with ChangeNotifier {
   List<String> pickedCategories = [];
   Map<String, bool> categories = {'仕事': false, '運動': false, '家庭': false, '友人': false, '睡眠': false};

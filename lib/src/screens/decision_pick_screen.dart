@@ -27,7 +27,7 @@ class DecisionPickScreen extends StatelessWidget {
                 ),
               ),
               Expanded(
-                flex: 8,
+                flex: 7,
                 child: Consumer<CategoryData>(
                   builder: (context, categoryData, child) {
                     return Column(
