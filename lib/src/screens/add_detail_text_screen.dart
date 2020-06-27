@@ -5,12 +5,29 @@ import 'package:pickthree/src/screens/add_pick_three_screen.dart';
 import '../models/category_data.dart';
 import 'package:provider/provider.dart';
 
-class AddDetailTextScreen extends StatelessWidget {
+class AddDetailTextScreen extends StatefulWidget {
   static const id = 'add_detail_text_screen';
+
+  @override
+  _AddDetailTextScreenState createState() => _AddDetailTextScreenState();
+}
+
+class _AddDetailTextScreenState extends State<AddDetailTextScreen> {
+  final textController = TextEditingController();
   String memo;
 
   @override
+  void dispose() {
+    textController.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
+    // TextFieldの値を入力後の値にする
+    textController.value = textController.value.copyWith(
+        text: Provider.of<CategoryData>(context, listen: false).categoryDetailTexts[Provider.of<CategoryData>(context, listen: false).selectedIndex]
+    );
     return Consumer<CategoryData>(
       builder: (context, categoryData, child) {
         int selectedIndex = categoryData.selectedIndex;
@@ -26,6 +43,7 @@ class AddDetailTextScreen extends StatelessWidget {
                     if(memo != null) {
                       categoryData.setCategoryDetailText(memo, selectedIndex);
                     }
+                    FocusScope.of(context).unfocus();
                     Navigator.pushNamed(context, AddPickThreeScreen.id);
                   },
                   child: Hero(
@@ -77,6 +95,7 @@ class AddDetailTextScreen extends StatelessWidget {
                         Material(
                           color: Colors.transparent,
                           child: TextField(
+                            controller: textController,
                             keyboardType: TextInputType.text,
                             decoration: InputDecoration(
                               border: InputBorder.none,
