@@ -3,10 +3,9 @@ import 'package:firebase_admob/firebase_admob.dart';
 import 'package:flutter/material.dart';
 import 'package:pickthree/src/components/category_tile.dart';
 import 'package:pickthree/src/extensions/hex_color.dart';
-import '../models/category_data.dart';
+import 'package:pickthree/src/models/category_data.dart';
 import 'package:provider/provider.dart';
-
-import 'decision_pick_screen.dart';
+import 'package:pickthree/src/screens/decision_pick_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   static const id = 'home_screen';

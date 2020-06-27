@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:pickthree/src/screens/add_detail_text_screen.dart';
 import 'package:provider/provider.dart';
-import '../models/category_data.dart';
-import '../helpers/helper.dart';
+import 'package:pickthree/src/models/category_data.dart';
+import 'package:pickthree/src/helpers/helper.dart';
 
 class CategoryMemoTile extends StatelessWidget {
   final String categoryText;

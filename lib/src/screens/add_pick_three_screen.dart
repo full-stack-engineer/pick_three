@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pickthree/src/components/category_memo_tile.dart';
 import 'package:provider/provider.dart';
-import '../models/category_data.dart';
+import 'package:pickthree/src/models/category_data.dart';
 
 class AddPickThreeScreen extends StatelessWidget {
   static const id = 'add_pick_three_screen';
