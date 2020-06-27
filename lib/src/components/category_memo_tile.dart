@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:pickthree/src/screens/add_detail_text_screen.dart';
 import 'package:provider/provider.dart';
 import '../models/category_data.dart';
-import '../helpers/tile_color.dart';
+import '../helpers/helper.dart';
 
 class CategoryMemoTile extends StatelessWidget {
   final String categoryText;
@@ -19,7 +19,7 @@ class CategoryMemoTile extends StatelessWidget {
             height: 152,
             padding: EdgeInsets.all(10.0),
             decoration: BoxDecoration(
-              color: TileColor.tileColor(categoryText),
+              color: Helper.tileColor(categoryText),
               borderRadius: BorderRadius.circular(8.0),
             ),
             child: Align(

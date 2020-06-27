@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pickthree/src/extensions/hex_color.dart';
-import 'package:pickthree/src/helpers/tile_color.dart';
+import 'package:pickthree/src/helpers/helper.dart';
 import 'package:pickthree/src/screens/add_pick_three_screen.dart';
 import '../models/category_data.dart';
 import 'package:provider/provider.dart';
@@ -16,7 +16,7 @@ class AddDetailTextScreen extends StatelessWidget {
         int selectedIndex = categoryData.selectedIndex;
         String pickedCategory = categoryData.pickedCategories[selectedIndex];
         return Scaffold(
-          backgroundColor: TileColor.tileColor(pickedCategory),
+          backgroundColor: Helper.tileColor(pickedCategory),
           body: Container(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,

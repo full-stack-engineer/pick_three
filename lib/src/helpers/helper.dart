@@ -1,7 +1,7 @@
 import 'dart:ui';
 import 'package:pickthree/src/extensions/hex_color.dart';
 
-class TileColor {
+class Helper {
   static Color tileColor(String categoryText) {
     switch (categoryText) {
       case '仕事':
