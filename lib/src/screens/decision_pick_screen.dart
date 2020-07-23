@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pickthree/src/components/category_tile.dart';
 import 'package:pickthree/src/models/category_data.dart';
-import 'package:pickthree/src/screens/add_pick_three_screen.dart';
+import 'package:pickthree/src/screens/pick_three_screen.dart';
 import 'package:provider/provider.dart';
 
 class DecisionPickScreen extends StatelessWidget {
@@ -70,7 +70,7 @@ class DecisionPickScreen extends StatelessWidget {
                   child: FloatingActionButton(
                     backgroundColor: Colors.white,
                     onPressed: () {
-                      Navigator.pushNamed(context, AddPickThreeScreen.id);
+                      Navigator.pushNamed(context, PickThreeScreen.id);
                     },
                   ),
                 ),

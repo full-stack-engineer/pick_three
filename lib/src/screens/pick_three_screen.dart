@@ -3,8 +3,8 @@ import 'package:pickthree/src/components/category_memo_tile.dart';
 import 'package:provider/provider.dart';
 import 'package:pickthree/src/models/category_data.dart';
 
-class AddPickThreeScreen extends StatelessWidget {
-  static const id = 'add_pick_three_screen';
+class PickThreeScreen extends StatelessWidget {
+  static const id = 'pick_three_screen';
 
   @override
   Widget build(BuildContext context) {

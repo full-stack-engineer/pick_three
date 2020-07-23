@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pickthree/src/extensions/hex_color.dart';
 import 'package:pickthree/src/helpers/helper.dart';
-import 'package:pickthree/src/screens/add_pick_three_screen.dart';
+import 'package:pickthree/src/screens/pick_three_screen.dart';
 import 'package:pickthree/src/models/category_data.dart';
 import 'package:provider/provider.dart';
 
@@ -44,7 +44,7 @@ class _AddDetailTextScreenState extends State<AddDetailTextScreen> {
                       categoryData.setCategoryDetailText(memo, selectedIndex);
                     }
                     FocusScope.of(context).unfocus();
-                    Navigator.pushNamed(context, AddPickThreeScreen.id);
+                    Navigator.pushNamed(context, PickThreeScreen.id);
                   },
                   child: Hero(
                     tag: categoryData.heroTag,
