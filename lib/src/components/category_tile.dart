@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pickthree/src/helpers/helper.dart';
 import 'package:pickthree/src/models/category_data.dart';
-import 'package:pickthree/src/screens/add_pick_three_screen.dart';
 import 'package:pickthree/src/screens/decision_pick_screen.dart';
 import '../extensions/hex_color.dart';
 import 'package:provider/provider.dart';
