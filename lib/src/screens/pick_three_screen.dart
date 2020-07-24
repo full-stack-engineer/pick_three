@@ -5,6 +5,8 @@ import 'package:provider/provider.dart';
 import 'package:pickthree/src/models/category_data.dart';
 import 'package:flutter_page_indicator/flutter_page_indicator.dart';
 
+import 'history_screen.dart';
+
 class PickThreeScreen extends StatefulWidget {
   static const id = 'pick_three_screen';
 
@@ -96,9 +98,7 @@ class _PickThreeScreenState extends State<PickThreeScreen> {
                       ],
                     ),
                   ),
-                  Container(
-                    color: Colors.red,
-                  ),
+                  HistoryScreen(),
                   Container(
                     color: Colors.blue,
                   ),
