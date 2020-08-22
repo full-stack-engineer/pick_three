@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 class Helper {
+  // TODO: category は enum にしたい
   static Color tileColor(String categoryText) {
     switch (categoryText) {
       case '仕事':
@@ -13,6 +14,8 @@ class Helper {
         return Color(0xFFF78863);
       case '睡眠':
         return Color(0xFF825CC6);
+      default:
+        return Color(0xFFFFFFFF);
     }
   }
 
@@ -28,6 +31,8 @@ class Helper {
         return Color.fromRGBO(247, 136, 99, 0.16);
       case '睡眠':
         return Color.fromRGBO(130, 92, 198, 0.16);
+      default:
+        return Color(0xFFFFFFFF);
     }
   }
 }
