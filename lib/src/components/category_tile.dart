@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:pickthree/src/helpers/helper.dart';
 import 'package:pickthree/src/models/category_data.dart';
 import 'package:pickthree/src/screens/decision_pick_screen.dart';
-import '../extensions/hex_color.dart';
 import 'package:provider/provider.dart';
 
 class CategoryTile extends StatelessWidget {
@@ -37,7 +36,7 @@ class CategoryTile extends StatelessWidget {
                 child: Text(
                   categoryText,
                   style: TextStyle(
-                    color: HexColor.fromHex('#FFFFFF'),
+                    color: Color(0xFFFFFFFF),
                     fontSize: 20.0,
                   ),
                   textAlign: TextAlign.center,
@@ -64,7 +63,7 @@ class CategoryTile extends StatelessWidget {
             ),
             child: Icon(
               Icons.check,
-              color: HexColor.fromHex('#333333'),
+              color: Color(0xFF333333),
             ),
           ),
         ) : Container(),

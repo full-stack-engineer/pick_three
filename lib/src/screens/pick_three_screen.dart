@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:pickthree/src/components/category_memo_tile.dart';
-import 'package:pickthree/src/extensions/hex_color.dart';
 import 'package:provider/provider.dart';
 import 'package:pickthree/src/models/category_data.dart';
 import 'package:flutter_page_indicator/flutter_page_indicator.dart';
@@ -115,8 +114,8 @@ class _PickThreeScreenState extends State<PickThreeScreen> {
                     layout: layout,
                     size: 8.0,
                     activeSize: 8.0,
-                    color: HexColor.fromHex('#DDDDDD'),
-                    activeColor: HexColor.fromHex('#333333'),
+                    color: Color(0xFFDDDDDD),
+                    activeColor: Color(0xFF333333),
                     controller: _pageController,
                     space: 8.0,
                     count: 3,

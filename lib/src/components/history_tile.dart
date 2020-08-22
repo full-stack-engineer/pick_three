@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:pickthree/src/extensions/hex_color.dart';
 import 'package:pickthree/src/helpers/helper.dart';
 
 class HistoryTile extends StatelessWidget {
@@ -16,13 +15,13 @@ class HistoryTile extends StatelessWidget {
           child: Text(
             categoryText,
             style: TextStyle(
-              color: HexColor.fromHex('#AAAAAA'),
+              color: Color(0xFFAAAAAA),
               fontSize: 14.0,
             ),
           ),
         ),
         Stack(
-          alignment: AlignmentDirectional.bottomStart,
+          alignment: AlignmentDirectional.bottomCenter,
           children: [
             Container(
               width: 47,
@@ -38,6 +37,12 @@ class HistoryTile extends StatelessWidget {
               decoration: BoxDecoration(
                 color: Helper.tileBackgroundColor(categoryText),
                 borderRadius: BorderRadius.circular(8.0),
+              ),
+            ),
+            Text(
+              '10',
+              style: TextStyle(
+                color: Colors.white,
               ),
             ),
           ],

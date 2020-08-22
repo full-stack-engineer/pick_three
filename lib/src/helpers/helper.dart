@@ -1,19 +1,18 @@
 import 'dart:ui';
-import 'package:pickthree/src/extensions/hex_color.dart';
 
 class Helper {
   static Color tileColor(String categoryText) {
     switch (categoryText) {
       case '仕事':
-        return HexColor.fromHex('#EC527F');
+        return Color(0xFFEC527F);
       case '運動':
-        return HexColor.fromHex('#7DCBBF');
+        return Color(0xFF7DCBBF);
       case '家庭':
-        return HexColor.fromHex('#FCAD43');
+        return Color(0xFFFCAD43);
       case '友人':
-        return HexColor.fromHex('#F78863');
+        return Color(0xFFF78863);
       case '睡眠':
-        return HexColor.fromHex('#825CC6');
+        return Color(0xFF825CC6);
     }
   }
 

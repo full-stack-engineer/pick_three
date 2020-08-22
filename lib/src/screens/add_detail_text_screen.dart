@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:pickthree/src/extensions/hex_color.dart';
 import 'package:pickthree/src/helpers/helper.dart';
 import 'package:pickthree/src/screens/pick_three_screen.dart';
 import 'package:pickthree/src/models/category_data.dart';
@@ -87,7 +86,7 @@ class _AddDetailTextScreenState extends State<AddDetailTextScreen> {
                         Container(
                           width: 40,
                           height: 4,
-                          color: HexColor.fromHex('#DDDDDD'),
+                          color: Color(0xFFDDDDDD),
                         ),
                         Padding(
                           padding: const EdgeInsets.only(bottom: 40.0),
@@ -103,7 +102,7 @@ class _AddDetailTextScreenState extends State<AddDetailTextScreen> {
                               hintStyle: TextStyle(
                                 fontWeight: FontWeight.bold,
                                 fontSize: 20.0,
-                                color: HexColor.fromHex('#DDDDDD')
+                                color: Color(0xFFDDDDDD),
                               ),
                             ),
                             onChanged: (newValue) {

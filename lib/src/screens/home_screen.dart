@@ -2,7 +2,6 @@ import 'dart:io';
 import 'package:firebase_admob/firebase_admob.dart';
 import 'package:flutter/material.dart';
 import 'package:pickthree/src/components/category_tile.dart';
-import 'package:pickthree/src/extensions/hex_color.dart';
 import 'package:pickthree/src/models/category_data.dart';
 import 'package:provider/provider.dart';
 import 'package:pickthree/src/screens/decision_pick_screen.dart';
@@ -79,7 +78,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     Navigator.pushNamed(context, DecisionPickScreen.id);
                   }
                 },
-                backgroundColor: HexColor.fromHex('#FFFFFF'),
+                backgroundColor: Color(0xFFFFFFFF),
               ),
             ],
           ),
@@ -102,10 +101,7 @@ String getAppId() {
 MobileAdTargetingInfo targetingInfo = MobileAdTargetingInfo(
   keywords: <String>['flutterio', 'beautiful apps'],
   contentUrl: 'https://flutter.io',
-  birthday: DateTime.now(),
   childDirected: false,
-  designedForFamilies: false,
-  gender: MobileAdGender.male,
   // or female, unknown
   testDevices: <String>[], // Android emulators are considered test devices
 );
